@@ -25,27 +25,43 @@ export const ChallengesScreen: React.FC<ChallengesScreenProps> = ({
   const challenges = [
     {
       id: 1,
-      title: '20 Giros no Fortune Tiger',
+      title: '🐯 20 Giros no Fortune Tiger',
+      description: 'Gire 20 vezes no jogo do Tigrinho',
       reward: 300,
       progress: dailyProgress.tigerSpins,
       target: 20,
-      icon: '🐅'
+      icon: '🐯',
+      color: 'pgbet-gold'
     },
     {
       id: 2,
-      title: 'Ganhe 3x em Qualquer Jogo',
+      title: '⭐ Ganhe 5 Vitórias',
+      description: 'Conquiste 5 vitórias em qualquer jogo',
       reward: 500,
       progress: dailyProgress.totalWins,
-      target: 3,
-      icon: '⭐'
+      target: 5,
+      icon: '⭐',
+      color: 'pgbet-amber'
     },
     {
       id: 3,
-      title: 'Assista 3 Anúncios',
+      title: '📺 Assista 3 Anúncios',
+      description: 'Ganhe moedas extras assistindo anúncios',
       reward: 200,
       progress: dailyProgress.adsWatched,
       target: 3,
-      icon: '📺'
+      icon: '📺',
+      color: 'pgbet-purple'
+    },
+    {
+      id: 4,
+      title: '🎰 Big Win no Tigrinho',
+      description: 'Ganhe 5x ou mais em um único spin',
+      reward: 1000,
+      progress: 0,
+      target: 1,
+      icon: '💰',
+      color: 'pgbet-red'
     }
   ];
 

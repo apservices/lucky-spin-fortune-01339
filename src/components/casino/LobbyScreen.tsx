@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { GameType } from '@/pages/Index';
@@ -60,34 +60,50 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({ coins, onNavigateToGam
           </div>
         </div>
 
-        {/* MAIN GAME - Fortune Tiger (2x bigger) */}
+        {/* MAIN GAME - Fortune Tiger (DESTAQUE MÁXIMO) */}
         <Card 
           onClick={() => onNavigateToGame('fortune-tiger')}
-          className="relative overflow-hidden bg-gradient-to-br from-pgbet-gold/20 to-pgbet-red/20 border-4 border-pgbet-gold hover:scale-105 transition-all duration-300 cursor-pointer shadow-2xl"
+          className="relative overflow-hidden bg-gradient-to-br from-pgbet-gold/30 to-pgbet-red/30 border-4 border-pgbet-gold hover:scale-[1.02] transition-all duration-300 cursor-pointer shadow-2xl animate-button-pulse-premium"
         >
-          <div className="p-8 text-center space-y-4">
-            <Badge className="absolute top-4 right-4 bg-pgbet-gradient-red text-white text-xs font-bold animate-button-pulse-premium">
-              ⭐ MAIS JOGADO
+          <div className="p-6 md:p-10 text-center space-y-6">
+            {/* Badge destaque */}
+            <Badge className="absolute top-4 right-4 bg-pgbet-red text-white text-sm font-black animate-pulse px-4 py-2">
+              ⭐ O TIGRINHO MAIS QUERIDO DO BR
             </Badge>
             
-            <div className="text-8xl animate-symbol-glow-dance">🐅</div>
+            {/* Tigre animado com efeitos */}
+            <div className="relative inline-block">
+              <div className="text-9xl md:text-[12rem] animate-mascot-celebration filter drop-shadow-2xl">🐯</div>
+              <div className="absolute -top-4 -right-4 text-5xl animate-bounce">✨</div>
+              <div className="absolute -bottom-4 -left-4 text-5xl animate-bounce" style={{ animationDelay: '0.3s' }}>💫</div>
+            </div>
             
-            <h2 className="text-4xl font-bold bg-pgbet-gradient-gold bg-clip-text text-transparent">
-              FORTUNE TIGER
-            </h2>
-            
-            <p className="text-lg text-pgbet-gold font-bold">
-              ⭐ JOGO MAIS POPULAR DO BR
-            </p>
+            <div className="space-y-3">
+              <h2 className="text-5xl md:text-6xl font-black bg-pgbet-gradient-gold bg-clip-text text-transparent">
+                FORTUNE TIGER
+              </h2>
+              
+              <p className="text-2xl md:text-3xl text-pgbet-gold font-black animate-pulse">
+                🎰 O TIGRINHO MAIS QUERIDO DO BR
+              </p>
 
-            <button className="w-full max-w-md mx-auto h-16 text-2xl bg-pgbet-gradient-gold hover:scale-105 transition-transform font-bold text-pgbet-dark rounded-xl shadow-lg border-2 border-pgbet-red">
-              JOGAR AGORA
+              <p className="text-lg text-white/80 font-semibold max-w-2xl mx-auto">
+                Grid 3x3 • 5 Linhas de Pagamento • Wild x10 • Free Spins • RTP 96,81%
+              </p>
+            </div>
+
+            <button className="w-full max-w-lg mx-auto h-20 text-3xl bg-pgbet-gradient-gold hover:scale-105 active:scale-95 transition-all font-black text-pgbet-dark rounded-2xl shadow-2xl border-4 border-pgbet-red relative overflow-hidden group">
+              <span className="relative z-10 flex items-center justify-center gap-3">
+                🐯 JOGAR AGORA 🎰
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
             </button>
 
-            <div className="flex items-center justify-center space-x-4 text-sm">
-              <Badge className="bg-pgbet-emerald">RTP 96,5%</Badge>
-              <Badge className="bg-pgbet-purple">Volatilidade Média</Badge>
-              <Badge className="bg-pgbet-red">Tigre x10</Badge>
+            <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
+              <Badge className="bg-pgbet-emerald text-white font-bold px-4 py-2">✓ RTP 96,81%</Badge>
+              <Badge className="bg-pgbet-purple text-white font-bold px-4 py-2">✓ Volatilidade Média</Badge>
+              <Badge className="bg-pgbet-red text-white font-bold px-4 py-2">✓ Wild x10</Badge>
+              <Badge className="bg-pgbet-amber text-pgbet-dark font-bold px-4 py-2">✓ Free Spins</Badge>
             </div>
           </div>
         </Card>
@@ -134,7 +150,7 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({ coins, onNavigateToGam
                   <button className="w-full h-12 bg-pgbet-gradient-red hover:scale-105 transition-transform font-bold text-white rounded-lg">
                     JOGAR
                   </button>
-                  <p className="text-xs text-pgbet-gold">RTP 96,5%</p>
+                  <p className="text-xs text-pgbet-gold">RTP 96,81%</p>
                 </div>
               </Card>
 
@@ -153,7 +169,7 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({ coins, onNavigateToGam
                   <button className="w-full h-12 bg-pgbet-gradient-gold hover:scale-105 transition-transform font-bold text-pgbet-dark rounded-lg">
                     JOGAR
                   </button>
-                  <p className="text-xs text-pgbet-gold">RTP 96,5%</p>
+                  <p className="text-xs text-pgbet-gold">RTP 96,81%</p>
                 </div>
               </Card>
 
@@ -172,7 +188,7 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({ coins, onNavigateToGam
                   <button className="w-full h-12 bg-pgbet-gradient-emerald hover:scale-105 transition-transform font-bold text-white rounded-lg">
                     JOGAR
                   </button>
-                  <p className="text-xs text-pgbet-gold">RTP 96,5%</p>
+                  <p className="text-xs text-pgbet-gold">RTP 96,81%</p>
                 </div>
               </Card>
             </div>
@@ -180,8 +196,10 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({ coins, onNavigateToGam
         </div>
 
         {/* Footer compliance */}
-        <div className="text-center text-xs text-muted-foreground pb-4">
-          🔞 Jogo responsável • +18 anos • Moedas virtuais sem valor real • RTP 96,5%
+        <div className="text-center text-xs text-muted-foreground pb-4 space-y-1">
+          <p className="font-bold">🔞 JOGO RESPONSÁVEL • +18 ANOS</p>
+          <p>Moedas virtuais sem valor real • RTP 96,81% • Volatilidade Média</p>
+          <p className="text-pgbet-gold">Jogo justo e transparente • Apenas diversão</p>
         </div>
       </div>
     </div>
