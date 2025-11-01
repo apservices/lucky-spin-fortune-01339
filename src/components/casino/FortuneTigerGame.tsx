@@ -200,13 +200,15 @@ export const FortuneTigerGame: React.FC<FortuneTigerGameProps> = ({
 
     playSound('spin');
 
-    // Animate spinning (show random symbols)
+    // Animate spinning (show random symbols) - velocidade viciante
     const spinDuration = 2000;
+    let tickSpeed = 80; // Começa rápido
     const interval = setInterval(() => {
       setReels(Array(9).fill(null).map(() => 
         SYMBOL_KEYS[Math.floor(Math.random() * SYMBOL_KEYS.length)]
       ));
-    }, 100);
+      tickSpeed += 10; // Desacelera progressivamente para criar tensão
+    }, tickSpeed);
 
     // Calculate final result
     setTimeout(() => {
@@ -251,7 +253,20 @@ export const FortuneTigerGame: React.FC<FortuneTigerGameProps> = ({
           });
         }
       } else {
-        toast('😮 Quase! Tente novamente!', { duration: 1500 });
+        // Tease messages para manter engajamento
+        const teaseMessages = [
+          '😮 Tão perto! Continue girando! 🐯',
+          '💪 Quase lá! Próximo giro pode ser o grande! 🎰',
+          '🔥 Tigre está aquecendo! Gire de novo! 💰',
+          '⚡ Quase vitória! Não desista agora! 🪙'
+        ];
+        toast(teaseMessages[Math.floor(Math.random() * teaseMessages.length)], { 
+          duration: 1800,
+          style: {
+            background: 'hsl(var(--pgbet-crimson))',
+            color: 'white'
+          }
+        });
       }
 
       onSpinComplete({
@@ -281,19 +296,19 @@ export const FortuneTigerGame: React.FC<FortuneTigerGameProps> = ({
   return (
     <div className="min-h-screen bg-gradient-to-br from-pgbet-dark via-pgbet-crimson/10 to-pgbet-dark relative overflow-hidden">
       {/* Animated background */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
-        {[...Array(20)].map((_, i) => (
+      <div className="absolute inset-0 pointer-events-none opacity-30">
+        {[...Array(25)].map((_, i) => (
           <div
             key={i}
-            className="absolute text-4xl animate-floating-coins-premium"
+            className="absolute text-3xl animate-floating-coins-premium"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 4}s`,
-              animationDuration: `${5 + Math.random() * 3}s`
+              animationDuration: `${4 + Math.random() * 4}s`
             }}
           >
-            🪙
+            {['🪙', '🐯', '💰', '🧧', '🏮'][Math.floor(Math.random() * 5)]}
           </div>
         ))}
       </div>
@@ -336,17 +351,17 @@ export const FortuneTigerGame: React.FC<FortuneTigerGameProps> = ({
         {/* Game title */}
         <div className="text-center space-y-2">
           <div className="flex items-center justify-center space-x-3">
-            <div className="text-6xl animate-mascot-celebration">🐯</div>
-            <h1 className="text-4xl md:text-5xl font-black bg-pgbet-gradient-gold bg-clip-text text-transparent">
+            <div className="text-6xl md:text-7xl animate-mascot-celebration filter drop-shadow-2xl">🐯</div>
+            <h1 className="text-4xl md:text-5xl font-black bg-pgbet-gradient-gold bg-clip-text text-transparent animate-pulse">
               FORTUNE TIGER
             </h1>
           </div>
-          <p className="text-sm text-pgbet-gold font-bold">
-            RTP 96,81% • 3x3 Grid • 5 Linhas de Pagamento
+          <p className="text-sm md:text-base text-pgbet-gold font-bold animate-symbol-glow-dance">
+            🎰 RTP 96,81% • 3x3 Grid • 5 Linhas de Pagamento 🐯
           </p>
           {freeSpins > 0 && (
-            <Badge className="bg-pgbet-red text-white text-lg font-bold animate-pulse px-6 py-2">
-              🎰 {freeSpins} FREE SPINS! 🐯
+            <Badge className="bg-pgbet-red text-white text-lg font-bold animate-button-pulse-premium px-6 py-2 shadow-lg">
+              🎰 {freeSpins} FREE SPINS ATIVOS! 🐯
             </Badge>
           )}
         </div>
