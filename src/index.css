@@ -1,0 +1,457 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Ultra Premium Fortune Tiger 3D Design System */
+    --background: 0 0% 3%;
+    --foreground: 45 100% 98%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 45 100% 96%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 45 100% 96%;
+
+    /* Ultra Vibrant Golden primaries - 3D Enhanced */
+    --primary: 45 100% 55%;
+    --primary-foreground: 0 0% 3%;
+    --primary-glow: 45 100% 70%;
+    --primary-shine: 48 100% 85%;
+
+    /* Deep Crimson secondary - Premium Red */
+    --secondary: 0 90% 50%;
+    --secondary-foreground: 45 100% 96%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 45 25% 70%;
+
+    --accent: 25 100% 60%;
+    --accent-foreground: 0 0% 3%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 100% 96%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 45 100% 55%;
+
+    /* Ultra Vibrant PGbet 3D Colors */
+    --pgbet-gold: 45 100% 58%;
+    --pgbet-red: 0 92% 55%;
+    --pgbet-dark: 240 20% 6%;
+    --pgbet-emerald: 142 90% 48%;
+    --pgbet-purple: 270 80% 60%;
+    --pgbet-amber: 35 100% 65%;
+    --pgbet-bronze: 30 80% 45%;
+    --pgbet-crimson: 0 92% 40%;
+    --pgbet-jade: 142 80% 40%;
+    --pgbet-diamond: 180 100% 85%;
+    --pgbet-platinum: 210 15% 85%;
+    
+    /* Fortune Tiger authentic palette (legacy) */
+    --fortune-gold: 45 100% 50%;
+    --fortune-red: 0 80% 45%;
+    --fortune-dark: 0 0% 4%;
+    --fortune-ember: 25 100% 55%;
+    --fortune-crimson: 0 70% 35%;
+    --fortune-bronze: 35 60% 40%;
+    
+    /* Ultra Premium 3D Gradients */
+    --pgbet-gradient-gold: linear-gradient(135deg, hsl(45 100% 65%) 0%, hsl(48 100% 85%) 25%, hsl(45 100% 58%) 50%, hsl(35 100% 70%) 75%, hsl(45 100% 65%) 100%);
+    --pgbet-gradient-red: linear-gradient(135deg, hsl(0 92% 60%) 0%, hsl(15 90% 65%) 25%, hsl(0 92% 55%) 50%, hsl(345 88% 58%) 75%, hsl(0 92% 60%) 100%);
+    --pgbet-gradient-emerald: linear-gradient(135deg, hsl(142 90% 55%) 0%, hsl(150 85% 60%) 25%, hsl(142 90% 48%) 50%, hsl(135 88% 52%) 75%, hsl(142 90% 55%) 100%);
+    --pgbet-gradient-purple: linear-gradient(135deg, hsl(270 80% 70%) 0%, hsl(280 85% 75%) 25%, hsl(270 80% 60%) 50%, hsl(260 82% 65%) 75%, hsl(270 80% 70%) 100%);
+    --pgbet-gradient-machine: linear-gradient(180deg, hsl(0 92% 60%) 0%, hsl(45 100% 65%) 25%, hsl(0 92% 55%) 50%, hsl(45 100% 58%) 75%, hsl(0 92% 60%) 100%);
+    --pgbet-gradient-diamond: linear-gradient(135deg, hsl(180 100% 90%) 0%, hsl(200 90% 95%) 25%, hsl(180 100% 85%) 50%, hsl(160 95% 88%) 75%, hsl(180 100% 90%) 100%);
+    --pgbet-gradient-platinum: linear-gradient(135deg, hsl(210 20% 90%) 0%, hsl(220 25% 95%) 25%, hsl(210 15% 85%) 50%, hsl(200 22% 88%) 75%, hsl(210 20% 90%) 100%);
+    
+    /* Authentic Chinese gradients (legacy) */
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 50%) 0%, hsl(45 100% 60%) 30%, hsl(25 100% 55%) 100%);
+    --gradient-red: linear-gradient(135deg, hsl(0 80% 45%) 0%, hsl(0 70% 35%) 100%);
+    --gradient-wheel: conic-gradient(from 0deg, hsl(45 100% 50%), hsl(0 80% 45%), hsl(45 100% 50%));
+    --gradient-background: radial-gradient(ellipse at center, hsl(0 0% 8%) 0%, hsl(0 0% 4%) 100%);
+    --gradient-reels: linear-gradient(180deg, hsl(0 0% 12%) 0%, hsl(0 0% 6%) 100%);
+    
+    /* Fortune Tiger signature glows */
+    --glow-gold: 0 0 30px hsl(45 100% 50% / 0.6), 0 0 60px hsl(45 100% 50% / 0.3);
+    --glow-red: 0 0 30px hsl(0 80% 45% / 0.6), 0 0 60px hsl(0 80% 45% / 0.3);
+    --shadow-fortune: 0 10px 40px hsl(0 0% 0% / 0.8);
+    
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Premium Fortune Tiger 3D animations */
+@keyframes realistic-spin {
+  0% { 
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg); 
+    filter: blur(0px) brightness(1); 
+    box-shadow: 0 0 20px hsl(45 100% 50% / 0.3);
+  }
+  15% { 
+    transform: perspective(1000px) rotateX(360deg) rotateY(45deg); 
+    filter: blur(4px) brightness(1.2); 
+    box-shadow: 0 0 40px hsl(45 100% 50% / 0.6);
+  }
+  50% { 
+    transform: perspective(1000px) rotateX(1080deg) rotateY(180deg); 
+    filter: blur(8px) brightness(1.5); 
+    box-shadow: 0 0 60px hsl(45 100% 50% / 0.8), 0 0 100px hsl(0 85% 50% / 0.4);
+  }
+  85% { 
+    transform: perspective(1000px) rotateX(1620deg) rotateY(315deg); 
+    filter: blur(2px) brightness(1.1); 
+    box-shadow: 0 0 30px hsl(45 100% 50% / 0.5);
+  }
+  100% { 
+    transform: perspective(1000px) rotateX(1800deg) rotateY(360deg); 
+    filter: blur(0px) brightness(1); 
+    box-shadow: 0 0 20px hsl(45 100% 50% / 0.3);
+  }
+}
+
+@keyframes jackpot-explosion {
+  0% { 
+    transform: scale(1) rotate(0deg); 
+    opacity: 1; 
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  25% { 
+    transform: scale(1.3) rotate(90deg); 
+    opacity: 0.9; 
+    filter: hue-rotate(45deg) brightness(1.5);
+  }
+  50% { 
+    transform: scale(1.8) rotate(180deg); 
+    opacity: 0.8; 
+    filter: hue-rotate(90deg) brightness(2);
+  }
+  75% { 
+    transform: scale(1.5) rotate(270deg); 
+    opacity: 0.9; 
+    filter: hue-rotate(135deg) brightness(1.5);
+  }
+  100% { 
+    transform: scale(1) rotate(360deg); 
+    opacity: 1; 
+    filter: hue-rotate(180deg) brightness(1);
+  }
+}
+
+@keyframes confetti-burst {
+  0% { 
+    transform: translateY(0) scale(0) rotate(0deg); 
+    opacity: 0; 
+  }
+  20% { 
+    transform: translateY(-30px) scale(1.2) rotate(180deg); 
+    opacity: 1; 
+  }
+  80% { 
+    transform: translateY(-100px) scale(0.8) rotate(540deg); 
+    opacity: 0.8; 
+  }
+  100% { 
+    transform: translateY(-200px) scale(0) rotate(720deg); 
+    opacity: 0; 
+  }
+}
+
+@keyframes mascot-celebration {
+  0%, 100% { 
+    transform: translateY(0) scale(1) rotate(0deg); 
+  }
+  25% { 
+    transform: translateY(-20px) scale(1.1) rotate(-5deg); 
+  }
+  50% { 
+    transform: translateY(-30px) scale(1.2) rotate(0deg); 
+  }
+  75% { 
+    transform: translateY(-20px) scale(1.1) rotate(5deg); 
+  }
+}
+
+@keyframes button-pulse-premium {
+  0% { 
+    transform: scale(1); 
+    box-shadow: 0 0 20px hsl(45 100% 50% / 0.4);
+    background: var(--pgbet-gradient-gold);
+  }
+  50% { 
+    transform: scale(1.05); 
+    box-shadow: 0 0 40px hsl(45 100% 50% / 0.8), 0 0 60px hsl(0 85% 50% / 0.4);
+    background: linear-gradient(135deg, hsl(45 100% 60%) 0%, hsl(0 85% 55%) 50%, hsl(45 100% 60%) 100%);
+  }
+  100% { 
+    transform: scale(1); 
+    box-shadow: 0 0 20px hsl(45 100% 50% / 0.4);
+    background: var(--pgbet-gradient-gold);
+  }
+}
+
+@keyframes symbol-glow-dance {
+  0%, 100% { 
+    filter: drop-shadow(0 0 10px currentColor) brightness(1); 
+    transform: scale(1); 
+  }
+  50% { 
+    filter: drop-shadow(0 0 30px currentColor) brightness(1.5); 
+    transform: scale(1.1); 
+  }
+}
+
+@keyframes win-line-sweep {
+  0% { 
+    width: 0%; 
+    box-shadow: 0 0 10px hsl(45 100% 50%); 
+  }
+  100% { 
+    width: 100%; 
+    box-shadow: 0 0 30px hsl(45 100% 50%), 0 0 50px hsl(0 85% 50%); 
+  }
+}
+
+@keyframes floating-coins-premium {
+  0% { 
+    transform: translateY(0) rotate(0deg) scale(1); 
+    opacity: 0.3; 
+  }
+  25% { 
+    transform: translateY(-15px) rotate(90deg) scale(1.1); 
+    opacity: 0.6; 
+  }
+  50% { 
+    transform: translateY(-30px) rotate(180deg) scale(1.2); 
+    opacity: 0.8; 
+  }
+  75% { 
+    transform: translateY(-15px) rotate(270deg) scale(1.1); 
+    opacity: 0.6; 
+  }
+  100% { 
+    transform: translateY(0) rotate(360deg) scale(1); 
+    opacity: 0.3; 
+  }
+}
+
+@keyframes energy-pulse {
+  0%, 100% { 
+    background: linear-gradient(90deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 100%); 
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.5); 
+  }
+  50% { 
+    background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%); 
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.8); 
+  }
+}
+
+/* Legacy animations maintained for compatibility */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes coin-rain {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes dragon-fire {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  /* Mobile optimizations */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Hide scrollbars but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  /* Premium PGbet animation utilities */
+  .bg-pgbet-gradient-gold {
+    background: var(--pgbet-gradient-gold);
+  }
+  
+  .bg-pgbet-gradient-red {
+    background: var(--pgbet-gradient-red);
+  }
+  
+  .bg-pgbet-gradient-emerald {
+    background: var(--pgbet-gradient-emerald);
+  }
+  
+  .bg-pgbet-gradient-machine {
+    background: var(--pgbet-gradient-machine);
+  }
+  
+  /* Premium 3D animations */
+  .animate-realistic-spin {
+    animation: realistic-spin 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .animate-realistic-spin-turbo {
+    animation: realistic-spin 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .animate-jackpot-explosion {
+    animation: jackpot-explosion 3s ease-out;
+  }
+  
+  .animate-confetti-burst {
+    animation: confetti-burst 2s ease-out;
+  }
+  
+  .animate-mascot-celebration {
+    animation: mascot-celebration 1.5s ease-in-out infinite;
+  }
+  
+  .animate-button-pulse-premium {
+    animation: button-pulse-premium 2s ease-in-out infinite;
+  }
+  
+  .animate-symbol-glow-dance {
+    animation: symbol-glow-dance 1s ease-in-out infinite;
+  }
+  
+  .animate-win-line-sweep {
+    animation: win-line-sweep 1s ease-out;
+  }
+  
+  .animate-floating-coins-premium {
+    animation: floating-coins-premium 4s ease-in-out infinite;
+  }
+  
+  .animate-energy-pulse {
+    animation: energy-pulse 2s ease-in-out infinite;
+  }
+  
+  /* Legacy animations */
+  .animate-pgbet-glow {
+    animation: pgbet-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-pgbet-win-pulse {
+    animation: pgbet-win-pulse 0.6s ease-in-out;
+  }
+  
+  .animate-pgbet-reel-spin {
+    animation: pgbet-reel-spin 2s ease-in-out infinite;
+  }
+  
+  .animate-pgbet-coin-float {
+    animation: pgbet-coin-float 3s ease-in-out infinite;
+  }
+  
+  .animate-pgbet-sparkle {
+    animation: pgbet-sparkle 1s ease-in-out infinite;
+  }
+  
+  /* Fortune Tiger custom utilities (legacy) */
+  .text-shadow-gold {
+    text-shadow: 0 2px 4px hsl(45 100% 50% / 0.5);
+  }
+  
+  .text-shadow-red {
+    text-shadow: 0 2px 4px hsl(0 80% 45% / 0.5);
+  }
+  
+  .border-3 {
+    border-width: 3px;
+  }
+  
+  /* Mobile-first responsive utilities */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  .safe-area-inset {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
